@@ -1,0 +1,18 @@
+class Commit
+  attr_reader sha: String
+end
+
+class Committer
+  attr_reader name: String
+
+  attr_reader email: String
+
+  attr_reader github_user: String?
+
+  attr_reader commits: Array[Commit]
+
+  def initialize: (name: String, email: String, github_user: String?) -> void
+
+  def each_commit: () { (Commit) -> void } -> void
+                 | () -> Enumerator[Commit, void]
+end
